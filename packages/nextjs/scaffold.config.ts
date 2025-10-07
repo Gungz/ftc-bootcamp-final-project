@@ -1,4 +1,27 @@
 import * as chains from "viem/chains";
+import { defineChain } from 'viem';
+
+export const virtualChain = defineChain({
+  id: 1313161862,
+  name: 'Gung Chain',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Gung Chain Gas',
+    symbol: 'GUNG',
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://0x4e454286.rpc.aurora-cloud.dev'],
+      webSocket: ['wss://0x4e454286.rpc.aurora-cloud.dev'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Explorer',
+      url: 'https://0x4e454286.explorer.aurora-cloud.dev'
+    },
+  },
+})
 
 export type BaseConfig = {
   targetNetworks: readonly chains.Chain[];
@@ -15,7 +38,8 @@ export const DEFAULT_ALCHEMY_API_KEY = "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 
 const scaffoldConfig = {
   // The networks on which your DApp is live
-  targetNetworks: [chains.hardhat],
+  // targetNetworks: [chains.hardhat],
+  targetNetworks: [virtualChain],
   // The interval at which your front-end polls the RPC servers for new data (it has no effect if you only target the local network (default is 4000))
   pollingInterval: 30000,
   // This is ours Alchemy's default API key.

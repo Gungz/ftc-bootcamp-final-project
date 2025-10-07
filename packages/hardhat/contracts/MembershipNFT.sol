@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract MembershipNFT is ERC721, Ownable {
     uint256 private _tokenIdCounter;
     uint256 public membershipPrice;
+    uint256 public totalMembers;
     
     event MembershipMinted(address indexed member, uint256 tokenId);
     event PriceUpdated(uint256 newPrice);
@@ -25,6 +26,7 @@ contract MembershipNFT is ERC721, Ownable {
         
         uint256 tokenId = _tokenIdCounter++;
         _safeMint(msg.sender, tokenId);
+        totalMembers++;
         
         if (msg.value > membershipPrice) {
             payable(msg.sender).transfer(msg.value - membershipPrice);

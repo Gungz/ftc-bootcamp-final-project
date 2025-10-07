@@ -13,6 +13,7 @@ contract CreatorSpace is ReentrancyGuard {
     CrowdfundingCampaign public crowdfunding;
     
     uint256 public totalLikes;
+    string public description;
     mapping(address => uint256) public userLikes;
     mapping(address => uint256) public tipReceived;
     
@@ -47,9 +48,11 @@ contract CreatorSpace is ReentrancyGuard {
         address _creator,
         string memory nftName,
         string memory nftSymbol,
+        string memory _description,
         uint256 membershipPrice
     ) {
         creator = _creator;
+        description = _description;
         membershipNFT = new MembershipNFT(nftName, nftSymbol, membershipPrice, _creator);
         exclusiveContent = new ExclusiveContent(_creator);
         crowdfunding = new CrowdfundingCampaign(_creator);

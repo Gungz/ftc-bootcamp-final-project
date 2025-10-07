@@ -18,12 +18,14 @@ contract CreatorPlatform {
     function createCreatorSpace(
         string memory nftName,
         string memory nftSymbol,
+        string memory description,
         uint256 membershipPrice
     ) external returns (address) {
         CreatorSpace newSpace = new CreatorSpace(
             msg.sender,
             nftName,
             nftSymbol,
+            description,
             membershipPrice
         );
         

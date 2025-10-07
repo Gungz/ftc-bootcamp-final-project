@@ -22,14 +22,12 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "Staker UI",
-    href: "/staker-ui",
-    icon: <CircleStackIcon className="h-4 w-4" />,
+    label: "Explore",
+    href: "/explore",
   },
   {
-    label: "Stake Events",
-    href: "/stakings",
-    icon: <InboxStackIcon className="h-4 w-4" />,
+    label: "My Space",
+    href: "/my-space",
   },
   {
     label: "Debug Contracts",
@@ -97,8 +95,8 @@ export const Header = () => {
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">SRE Challenges</span>
-            <span className="text-xs">Decentralized Staking App</span>
+            <span className="font-bold leading-tight">Decentralized Platform</span>
+            <span className="text-xs">Creator X Fan</span>
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">

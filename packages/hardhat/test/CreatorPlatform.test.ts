@@ -8,6 +8,7 @@ describe("CreatorPlatform", function () {
   let creator: SignerWithAddress;
   let member: SignerWithAddress;
   let membershipPrice: bigint;
+  let description: string = "test creator space";
 
   before(async () => {
     [creator, member] = await ethers.getSigners();
@@ -29,6 +30,7 @@ describe("CreatorPlatform", function () {
       const tx = await creatorPlatform.connect(creator).createCreatorSpace(
         "Test Creator Membership",
         "TCM",
+        description,
         membershipPrice
       );
       

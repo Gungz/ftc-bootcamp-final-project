@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   1313161862: {
     CreatorPlatform: {
-      address: "0x6e120Dd795E58bA8eE98ebE1F90f4958065C373f",
+      address: "0xedec0330eC333af87a52121F28573aaa34610299",
       abi: [
         {
           anonymous: false,
@@ -69,6 +69,11 @@ const deployedContracts = {
             {
               internalType: "string",
               name: "nftSymbol",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "description",
               type: "string",
             },
             {
@@ -178,7 +183,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deployedOnBlock: 166994486,
+      deployedOnBlock: 167251132,
     },
   },
 } as const;

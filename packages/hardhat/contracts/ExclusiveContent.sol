@@ -62,4 +62,8 @@ contract ExclusiveContent is ERC1155, Ownable {
     function withdraw() external onlyOwner {
         payable(owner()).transfer(address(this).balance);
     }
+    
+    function getContentCount() external view returns (uint256) {
+        return _contentIdCounter;
+    }
 }
